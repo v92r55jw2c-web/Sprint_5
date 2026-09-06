@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from data import BASE_URL
 from locators import (
     BUTTON_LOGIN_HOME_PAGE,
     BUTTON_PERSONAL_ACCOUNT,
@@ -16,7 +17,7 @@ from locators import (
 class TestLogin:
 
     def test_log_on_button_LogIn_on_home_page(self, driver):
-        driver.get("https://stellarburgers.education-services.ru/")
+        driver.get(BASE_URL)
         
         driver.find_element(*BUTTON_LOGIN_HOME_PAGE).click()
         
@@ -30,7 +31,7 @@ class TestLogin:
         assert button_order.is_displayed()
 
     def test_log_on_button_LogIn_on_personal_account(self, driver):
-        driver.get("https://stellarburgers.education-services.ru/")
+        driver.get(BASE_URL)
     
         WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(BUTTON_PERSONAL_ACCOUNT)).click()
         
@@ -46,7 +47,7 @@ class TestLogin:
 
 
     def test_log_on_button_LogIn_on_form_registration(self, driver):
-        driver.get("https://stellarburgers.education-services.ru/")
+        driver.get(BASE_URL)
 
         WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(BUTTON_PERSONAL_ACCOUNT)).click()
 
@@ -65,7 +66,7 @@ class TestLogin:
 
 
     def test_log_on_button_LogIn_on_form_password_recovery(self, driver):
-        driver.get("https://stellarburgers.education-services.ru/")
+        driver.get(BASE_URL)
 
         WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(BUTTON_PERSONAL_ACCOUNT)).click()
 
