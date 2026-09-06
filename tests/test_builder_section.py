@@ -21,7 +21,10 @@ class TestConstructor:
 
         section_buns_element.click()
 
-        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_BUNS_ACTIVE))
+        section_buns_active = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_BUNS_ACTIVE))
+
+        assert section_buns_active.is_displayed()
+
 
 
     def test_go_to_section_sauces(self, authorized_driver):
@@ -33,7 +36,9 @@ class TestConstructor:
     
         driver.find_element(*SECTION_SAUCES).click()
     
-        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_SAUCES_ACTIVE))
+        section_sauces_active = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_SAUCES_ACTIVE))
+
+        assert section_sauces_active.is_displayed()
     
 
     def test_go_to_section_fillings(self, authorized_driver):
@@ -45,4 +50,6 @@ class TestConstructor:
     
         driver.find_element(*SECTION_FILLINGS).click()
     
-        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_FILLINGS_ACTIVE))
+        section_fillings_active = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(SECTION_FILLINGS_ACTIVE))
+
+        assert section_fillings_active.is_displayed()

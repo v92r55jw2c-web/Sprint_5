@@ -22,7 +22,10 @@ class TestNavigatoinPersonalAccount:
 
         driver.find_element(*BUTTON_STELLAR_BURGERS).click()
 
-        WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(BUTTON_ORDER))
+        button_order = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(BUTTON_ORDER))
+
+        assert button_order.is_displayed()
+
 
 
     def test_go_to_section_builder_on_buttonBuilder(self, authorized_driver):
@@ -36,5 +39,7 @@ class TestNavigatoinPersonalAccount:
 
         driver.find_element(*BUTTON_BUILDER).click()
 
-        assert WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(BUTTON_ORDER))
+        button_order = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(BUTTON_ORDER))
+
+        assert button_order.is_displayed()
 
