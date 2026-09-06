@@ -9,6 +9,8 @@ from locators import (
     BUTTON_LOGIN,
     BUTTON_ORDER
 )
+from data import TEST_EMAIL, TEST_PASSWORD, BASE_URL
+
 
 @pytest.fixture
 def driver():
@@ -22,12 +24,12 @@ def driver():
 
 @pytest.fixture
 def authorized_driver(driver):
-    driver.get("https://stellarburgers.education-services.ru/")
+    driver.get(BASE_URL)
 
     WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(BUTTON_PERSONAL_ACCOUNT)).click()
 
-    driver.find_element(*EMAIL_LOG_IN).send_keys("olya_mikheeva_53_001@yandex.ru")
-    driver.find_element(*PASSWORD_LOG_IN).send_keys("123456789")
+    driver.find_element(*EMAIL_LOG_IN).send_keys(TEST_EMAIL)
+    driver.find_element(*PASSWORD_LOG_IN).send_keys(TEST_PASSWORD)
 
     driver.find_element(*BUTTON_LOGIN).click()
 

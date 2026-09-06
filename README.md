@@ -1,4 +1,5 @@
 # Sprint 5 — Автоматизация тестирования Stellar Burgers
+Проект выполнен в рамках учебного задания Sprint 5.
 
 ## Описание проекта
 
@@ -43,16 +44,18 @@
 ```text
 Sprint_5/
 │
-├── Tests/
-│   ├── 1. Registration/
-│   ├── 2. Login/
-│   ├── 3. Go to personal account/
-│   ├── 4. Navigating from the personal account to the builder/
-│   ├── 5. Log out of account/
-│   └── 6. Builder Section/
+├── tests/
+│   ├── test_registration
+│   ├── test_login
+│   ├── test_personal_account
+│   ├── test_navigation_from_personal_account
+│   ├── test_builder_section
+│   └── test_log_out
 │
 ├── conftest.py
 ├── locators.py
 ├── requirements.txt
+|── utils.py
+|── data.py
 ├── README.md
 └── .gitignore
